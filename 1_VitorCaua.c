@@ -3,6 +3,7 @@
 
 void titulo_jogo();
 void matriz_jogo_velha(char matriz[3][3]);
+void como_jogar();
 
 int main(){
 
@@ -40,4 +41,7 @@ void matriz_jogo_velha(char matriz[3][3]){
     printf("1  %c | %c | %c", matriz[1][0], matriz[1][1], matriz[1][2]);
     printf("  ----*----*----");
     printf("2  %c | %c | %c", matriz[0][0], matriz[0][1], matriz[0][2]);
+
+    return;
 }
+
