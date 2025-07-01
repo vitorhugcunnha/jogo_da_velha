@@ -3,6 +3,7 @@
 
 void titulo_jogo();
 void matriz_jogo_velha(char matriz[3][3]);
+void como_jogar();
 
 int main(){
 
@@ -13,18 +14,20 @@ int main(){
     titulo_jogo();
     do
     {
-        printf("[1] - Jogar");
-        printf("[2] - Como Jogar");
-        printf("[3] - Sair");
+        printf("\n");
+        printf("[1] - Jogar\n");
+        printf("[2] - Como Jogar\n");
+        printf("[3] - Sair\n");
+        scanf("%i", &opcao);
     switch(opcao){
         case 1:
-            jogar();
+            
         break;
         case 2:
-            como_jogar();
+           
         break;
         default:
-            printf("Erro de Identificação!");
+            printf("Erro de Identificacao!");
         break;
     }
     } while (opcao != 3);
@@ -48,10 +51,20 @@ printf("                             \\/_/      \\/_____/   \\/_____/   \\/_/\\/
 }
 void matriz_jogo_velha(char matriz[3][3]){
     system("cls");
-    printf("   0    1    2");
-    printf("0  %c | %c | %c", matriz[0][0], matriz[0][1], matriz[0][2]);
+    printf("  %c | %c | %c", matriz[0][0], matriz[0][1], matriz[0][2]);
     printf("  ----*----*----");
-    printf("1  %c | %c | %c", matriz[1][0], matriz[1][1], matriz[1][2]);
+    printf("  %c | %c | %c", matriz[1][0], matriz[1][1], matriz[1][2]);
     printf("  ----*----*----");
-    printf("2  %c | %c | %c", matriz[2][0], matriz[2][1], matriz[2][2]);
+    printf("  %c | %c | %c", matriz[2][0], matriz[2][1], matriz[2][2]);
+}
+void como_jogar(){
+    system("cls");
+    printf("🕹️ Como Jogar - Jogo da Velha\n");
+    printf("O Jogo da Velha é uma disputa entre dois jogadores, que se revezam para marcar os espaços de um tabuleiro 3x3.\n");
+    printf(" - Jogador 1 usa o símbolo X\n");
+    printf(" - Jogador 1 usa o símbolo O\n");
+
+
+    printf("📋 Regras do Jogo");
+
 }
