@@ -65,6 +65,7 @@ void como_jogar(){
     printf("      |    | X  \n\n");
 
     printf("Neste exemplo, o Jogador 1 (X) venceu ao formar uma linha diagonal.\n\n");
+    printf("Aperte qualquer tecla para voltar ao inicio...");
     getch();
 
 }
