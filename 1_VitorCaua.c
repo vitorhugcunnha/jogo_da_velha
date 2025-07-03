@@ -26,7 +26,6 @@ int main(){
         break;
         case 2:
            como_jogar();
-
         break;
         case 3:
 
@@ -62,7 +61,6 @@ void matriz_jogo_velha(char matriz[3][3]){
     printf("  ----*----*----\n");
     printf("  %c | %c | %c \n", matriz[2][0], matriz[2][1], matriz[2][2]);
 }
-
 void como_jogar(){
    
     system("cls");
