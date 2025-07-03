@@ -8,14 +8,28 @@ void como_jogar();
 int main(){
 
     char matriz[3][3];
+    int opcao;
 
     system("cls");
     titulo_jogo();
-    
+    do
+    {
+        printf("[1] - Jogar");
+        printf("[2] - Como Jogar");
+        printf("[3] - Sair");
+    switch(opcao){
+        case 1:
+            jogar();
+        break;
+        case 2:
+            como_jogar();
+        break;
+        default:
+            printf("Erro de Identificação!");
+        break;
+    }
+    } while (opcao != 3);
 
-
-   
-.
     return 0;
 
 }
@@ -43,5 +57,6 @@ void matriz_jogo_velha(char matriz[3][3]){
     printf("2  %c | %c | %c", matriz[0][0], matriz[0][1], matriz[0][2]);
 
     return;
+    printf("2  %c | %c | %c", matriz[2][0], matriz[2][1], matriz[2][2]);
 }
 
