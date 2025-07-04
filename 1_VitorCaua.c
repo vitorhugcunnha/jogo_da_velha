@@ -94,14 +94,24 @@ int jogar(char matriz[3][3]) {
             jogador = 'O';
         }
 
-        do {
-            printf("\nJogador '%c', escolha uma posicao de 1 a 9: ", jogador);
-            scanf("%d", &posicao);
+                do {
+            printf("\nJogador '%c', escolha uma posicao de 1 a 9 OU 0 para sair: ", jogador);
+            scanf("%i", &posicao);
+
+            if (posicao == 0) {
+                printf("\nSaindo...\n");
+                return 0; 
+            }
 
             linha = (posicao - 1) / 3;
             coluna = (posicao - 1) % 3;
 
         } while (posicao < 1 || posicao > 9 || matriz[linha][coluna] != ' ');
+
+
+        if(posicao == 0){
+            break;
+        }
 
         matriz[linha][coluna] = jogador;
 
@@ -144,6 +154,7 @@ int jogar(char matriz[3][3]) {
 }
 void menu_principal(char matriz[3][3]) {
     int opcao;
+    char entrada[10];
 
     do {
         system("cls");
@@ -153,7 +164,14 @@ void menu_principal(char matriz[3][3]) {
         printf("[2] - Como Jogar\n");
         printf("[3] - Sair\n");
         printf("Escolha:\n");
-        scanf("%i", &opcao);
+
+        fgets(entrada, sizeof(entrada), stdin);
+
+        if (sscanf(entrada, "%i", &opcao) != 1) {
+            printf("Digite numeros apenas!\n");
+            getch();
+            continue;
+        }
 
         switch(opcao) {
             case 1:
@@ -167,7 +185,8 @@ void menu_principal(char matriz[3][3]) {
                 break;
             default:
                 printf("Erro de Identificacao!\n");
-                system("pause");
+                printf("Aperte qualquer tecla para ...");
+                getch();
                 break;
         }
 
