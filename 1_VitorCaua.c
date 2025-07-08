@@ -18,7 +18,8 @@ int main()
     return 0;
 }
 
-void titulo_jogo(){
+void titulo_jogo()
+{
     printf("\n");
     system("cls");
     printf("                                                           &&&&&&  &&&&&  &&&&&&&  &&&&&&     &&&&&     &&&&      &&   &&  &&&&&&  &&      &&  &&   &&&&    \n");
@@ -28,7 +29,8 @@ void titulo_jogo(){
     printf("                                                          &&&&&    &&&&&  &&&&&&&  &&&&&&     &&&&&    &&  &&       &&     &&&&&&  &&&&&&  &&  &&  &&  &&   \n");
     printf("\n");
 }
-void matriz_jogo_velha(char matriz[3][3]){
+void matriz_jogo_velha(char matriz[3][3])
+{
     system("cls");
 
     printf("  1 | 2 | 3 \n");
@@ -44,7 +46,8 @@ void matriz_jogo_velha(char matriz[3][3]){
     printf("  ----------\n");
     printf("  %c | %c | %c \n", matriz[2][0], matriz[2][1], matriz[2][2]);
 }
-void como_jogar(){
+void como_jogar()
+{
 
     system("cls");
     printf(" Como Jogar - Jogo da Velha\n\n");
@@ -76,7 +79,8 @@ void como_jogar(){
     printf("Aperte qualquer tecla para voltar ao inicio...");
     getch();
 }
-int jogar(char matriz[3][3]){
+int jogar(char matriz[3][3])
+{
     int linha, coluna, rodada, ganhou, posicao;
     char jogador;
     int opcao;
@@ -110,11 +114,11 @@ int jogar(char matriz[3][3]){
             }
 
             posicao = receber_jogada(jogador, matriz);
-            if (posicao == 0) return 0;
+            if (posicao == 0)
+                return 0;
 
             linha = (posicao - 1) / 3;
             coluna = (posicao - 1) % 3;
-
 
             matriz[linha][coluna] = jogador;
 
@@ -151,7 +155,8 @@ int jogar(char matriz[3][3]){
 
     return 0;
 }
-void menu_principal(char matriz[3][3]){
+void menu_principal(char matriz[3][3])
+{
     int opcao;
     char entrada[10];
 
@@ -194,21 +199,25 @@ void menu_principal(char matriz[3][3]){
 
     } while (opcao != 3);
 }
-int receber_jogada(char jogador, char matriz[3][3]) {
+int receber_jogada(char jogador, char matriz[3][3])
+{
     int posicao, linha, coluna;
 
-    do {
+    do
+    {
         printf("\nJogador '%c', escolha uma posicao de 1 a 9 OU 0 para sair: ", jogador);
         scanf("%i", &posicao);
 
-        if (posicao == 0) {
+        if (posicao == 0)
+        {
             return 0;
         }
 
         linha = (posicao - 1) / 3;
         coluna = (posicao - 1) % 3;
 
-        if (posicao < 1 || posicao > 9 || matriz[linha][coluna] != ' ') {
+        if (posicao < 1 || posicao > 9 || matriz[linha][coluna] != ' ')
+        {
             printf("Posicao esta ocupada ou informacao invalida.\n");
         }
 
@@ -218,17 +227,22 @@ int receber_jogada(char jogador, char matriz[3][3]) {
 
     return posicao;
 }
-int verificar_vitoria(char matriz[3][3], int linha, int coluna, char jogador) {
-    if (matriz[linha][0] == jogador && matriz[linha][1] == jogador && matriz[linha][2] == jogador) {
+int verificar_vitoria(char matriz[3][3], int linha, int coluna, char jogador)
+{
+    if (matriz[linha][0] == jogador && matriz[linha][1] == jogador && matriz[linha][2] == jogador)
+    {
         return 1;
     }
-    else if (matriz[0][coluna] == jogador && matriz[1][coluna] == jogador && matriz[2][coluna] == jogador) {
+    else if (matriz[0][coluna] == jogador && matriz[1][coluna] == jogador && matriz[2][coluna] == jogador)
+    {
         return 1;
     }
-    else if (linha == coluna && matriz[0][0] == jogador && matriz[1][1] == jogador && matriz[2][2] == jogador) {
+    else if (linha == coluna && matriz[0][0] == jogador && matriz[1][1] == jogador && matriz[2][2] == jogador)
+    {
         return 1;
     }
-    else if ((linha + coluna) == 2 && matriz[0][2] == jogador && matriz[1][1] == jogador && matriz[2][0] == jogador) {
+    else if ((linha + coluna) == 2 && matriz[0][2] == jogador && matriz[1][1] == jogador && matriz[2][0] == jogador)
+    {
         return 1;
     }
 
